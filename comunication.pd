@@ -1,5 +1,5 @@
-#N canvas 335 147 1297 539 10;
-#N canvas -194 141 1924 1030 RELOGIOS 0;
+#N canvas 68 147 428 501 10;
+#N canvas 35 119 1273 624 RELOGIOS 0;
 #X obj 27 463 netsend -u -b;
 #X msg 146 438 disconnect;
 #X obj 27 385 list prepend send;
@@ -7,7 +7,7 @@
 #X obj 145 386 loadbang;
 #X obj 27 485 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 27 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 27 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 326 457 netsend -u -b;
 #X msg 445 432 disconnect;
@@ -16,7 +16,7 @@
 #X obj 444 380 loadbang;
 #X obj 326 479 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 326 319 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 326 319 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 326 291 r Relogio-SET-2;
 #X obj 635 446 netsend -u -b;
@@ -26,7 +26,7 @@
 #X obj 753 369 loadbang;
 #X obj 635 468 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 635 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 635 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 925 465 netsend -u -b;
 #X msg 1044 440 disconnect;
@@ -35,7 +35,7 @@
 #X obj 1043 388 loadbang;
 #X obj 925 487 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 925 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 925 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 921 223 netsend -u -b;
 #X msg 1040 198 disconnect;
@@ -44,7 +44,7 @@
 #X obj 1039 146 loadbang;
 #X obj 921 245 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 921 85 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 921 85 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 27 297 r Relogio-SET-1;
 #X obj 27 357 oscformat -f i /Clock;
@@ -113,23 +113,23 @@
 #X connect 51 0 16 0;
 #X connect 51 0 8 0;
 #X restore 25 15 pd RELOGIOS;
-#X obj 1142 144 oscparse;
-#X obj 1142 172 list trim;
-#X obj 1174 252 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
-#X obj 1146 103 netreceive -u -b 6005;
-#X obj 1017 302 print 6005;
-#X obj 1142 200 route Start;
-#X obj 1142 293 sel 2 3 4 5;
-#X obj 1135 334 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 151 177 oscparse;
+#X obj 151 205 list trim;
+#X obj 183 285 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 155 136 netreceive -u -b 6005;
+#X obj 26 335 print 6005;
+#X obj 151 233 route Start;
+#X obj 151 326 sel 2 3 4 5;
+#X obj 144 367 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1159 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 168 368 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1188 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 197 368 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1212 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 221 369 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas -144 232 1458 723 CONGAS 1;
+#N canvas 278 81 978 643 CONGAS 1;
 #X obj 115 596 netsend -u -b;
 #X msg 234 571 disconnect;
 #X obj 164 138 oscparse;
@@ -152,28 +152,28 @@
 #X obj 115 433 r 1-Blink;
 #X obj 164 194 route Conga;
 #X obj 115 490 oscformat -f i /CongaLight;
-#X obj 872 69 oscparse;
-#X obj 941 163 print RECV;
-#X obj 872 97 list trim;
-#X obj 781 219 bng 60 50 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 612 130 oscparse;
+#X obj 681 224 print RECV;
+#X obj 612 158 list trim;
+#X obj 521 280 bng 60 50 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 872 125 route Conga;
-#X obj 876 28 netreceive -u -b 6004;
-#X obj 849 530 netsend -u -b;
-#X msg 968 505 disconnect;
-#X obj 849 452 list prepend send;
-#X obj 849 481 list trim;
-#X obj 967 453 loadbang;
-#X msg 849 396 1;
-#X obj 849 552 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 612 186 route Conga;
+#X obj 616 89 netreceive -u -b 6004;
+#X obj 589 591 netsend -u -b;
+#X msg 708 566 disconnect;
+#X obj 589 513 list prepend send;
+#X obj 589 542 list trim;
+#X obj 707 514 loadbang;
+#X msg 589 457 1;
+#X obj 589 613 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 849 424 oscformat -f i /CongaLight;
-#X msg 966 476 connect 192.168.0.4 6000;
-#X obj 872 268 s 4-Hit;
-#X obj 849 367 r 4-Blink;
-#X obj 930 323 r 3-Blink;
-#X obj 1012 323 r 2-Blink;
-#X obj 1093 345 r 1-Blink;
+#X obj 589 485 oscformat -f i /CongaLight;
+#X msg 706 537 connect 192.168.0.4 6000;
+#X obj 612 329 s 4-Hit;
+#X obj 589 428 r 4-Blink;
+#X obj 670 384 r 3-Blink;
+#X obj 752 384 r 2-Blink;
+#X obj 833 406 r 1-Blink;
 #X connect 0 0 14 0;
 #X connect 1 0 0 0;
 #X connect 2 0 6 0;
@@ -209,7 +209,7 @@
 #X connect 36 0 30 0;
 #X connect 37 0 30 0;
 #X connect 38 0 30 0;
-#X restore 97 67 pd CONGAS;
+#X restore 23 54 pd CONGAS;
 #X connect 1 0 2 0;
 #X connect 2 0 6 0;
 #X connect 4 0 1 0;
