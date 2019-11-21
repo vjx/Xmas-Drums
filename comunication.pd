@@ -1,0 +1,220 @@
+#N canvas 335 147 1297 539 10;
+#N canvas -194 141 1924 1030 RELOGIOS 0;
+#X obj 27 463 netsend -u -b;
+#X msg 146 438 disconnect;
+#X obj 27 385 list prepend send;
+#X obj 27 414 list trim;
+#X obj 145 386 loadbang;
+#X obj 27 485 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 27 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 326 457 netsend -u -b;
+#X msg 445 432 disconnect;
+#X obj 326 379 list prepend send;
+#X obj 326 408 list trim;
+#X obj 444 380 loadbang;
+#X obj 326 479 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 326 319 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 326 291 r Relogio-SET-2;
+#X obj 635 446 netsend -u -b;
+#X msg 754 421 disconnect;
+#X obj 635 368 list prepend send;
+#X obj 635 397 list trim;
+#X obj 753 369 loadbang;
+#X obj 635 468 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 635 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 925 465 netsend -u -b;
+#X msg 1044 440 disconnect;
+#X obj 925 387 list prepend send;
+#X obj 925 416 list trim;
+#X obj 1043 388 loadbang;
+#X obj 925 487 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 925 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 921 223 netsend -u -b;
+#X msg 1040 198 disconnect;
+#X obj 921 145 list prepend send;
+#X obj 921 174 list trim;
+#X obj 1039 146 loadbang;
+#X obj 921 245 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 921 85 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 27 297 r Relogio-SET-1;
+#X obj 27 357 oscformat -f i /Clock;
+#X msg 144 409 connect 192.168.0.11 6000;
+#X obj 326 351 oscformat -f i /Clock;
+#X msg 443 403 connect 192.168.0.12 6000;
+#X obj 635 280 r Relogio-SET-3;
+#X obj 925 299 r Relogio-SET-4;
+#X obj 921 57 r Estrela;
+#X obj 921 117 oscformat -f i /Clock;
+#X obj 635 340 oscformat -f i /Clock;
+#X obj 925 359 oscformat -f i /Clock;
+#X msg 752 392 connect 192.168.0.13 6000;
+#X msg 1042 411 connect 192.168.0.14 6000;
+#X msg 1038 169 connect 192.168.0.15 6000;
+#X text 95 90 Controle dos relogios e Estrela;
+#X obj 498 170 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 38 0;
+#X connect 6 0 37 0;
+#X connect 7 0 12 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 0;
+#X connect 11 0 40 0;
+#X connect 13 0 39 0;
+#X connect 14 0 13 0;
+#X connect 15 0 20 0;
+#X connect 16 0 15 0;
+#X connect 17 0 18 0;
+#X connect 18 0 15 0;
+#X connect 19 0 47 0;
+#X connect 21 0 45 0;
+#X connect 22 0 27 0;
+#X connect 23 0 22 0;
+#X connect 24 0 25 0;
+#X connect 25 0 22 0;
+#X connect 26 0 48 0;
+#X connect 28 0 46 0;
+#X connect 29 0 34 0;
+#X connect 30 0 29 0;
+#X connect 31 0 32 0;
+#X connect 32 0 29 0;
+#X connect 33 0 49 0;
+#X connect 35 0 44 0;
+#X connect 36 0 6 0;
+#X connect 37 0 2 0;
+#X connect 38 0 0 0;
+#X connect 39 0 9 0;
+#X connect 40 0 7 0;
+#X connect 41 0 21 0;
+#X connect 42 0 28 0;
+#X connect 43 0 35 0;
+#X connect 44 0 31 0;
+#X connect 45 0 17 0;
+#X connect 46 0 24 0;
+#X connect 47 0 15 0;
+#X connect 48 0 22 0;
+#X connect 49 0 29 0;
+#X connect 51 0 1 0;
+#X connect 51 0 23 0;
+#X connect 51 0 16 0;
+#X connect 51 0 8 0;
+#X restore 25 15 pd RELOGIOS;
+#X obj 1142 144 oscparse;
+#X obj 1142 172 list trim;
+#X obj 1174 252 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 1146 103 netreceive -u -b 6005;
+#X obj 1017 302 print 6005;
+#X obj 1142 200 route Start;
+#X obj 1142 293 sel 2 3 4 5;
+#X obj 1135 334 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1159 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1188 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1212 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas -144 232 1458 723 CONGAS 1;
+#X obj 115 596 netsend -u -b;
+#X msg 234 571 disconnect;
+#X obj 164 138 oscparse;
+#X obj 115 518 list prepend send;
+#X obj 115 547 list trim;
+#X obj 233 232 print RECV;
+#X obj 164 166 list trim;
+#X obj 233 519 loadbang;
+#X obj 164 337 s congahit;
+#X obj 164 287 spigot;
+#X obj 196 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 73 288 bng 60 50 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 115 462 1;
+#X msg 232 542 connect 192.168.0.1 6000;
+#X obj 115 618 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 168 97 netreceive -u -b 6001;
+#X obj 115 433 r 1-Blink;
+#X obj 164 194 route Conga;
+#X obj 115 490 oscformat -f i /CongaLight;
+#X obj 872 69 oscparse;
+#X obj 941 163 print RECV;
+#X obj 872 97 list trim;
+#X obj 781 219 bng 60 50 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 872 125 route Conga;
+#X obj 876 28 netreceive -u -b 6004;
+#X obj 849 530 netsend -u -b;
+#X msg 968 505 disconnect;
+#X obj 849 452 list prepend send;
+#X obj 849 481 list trim;
+#X obj 967 453 loadbang;
+#X msg 849 396 1;
+#X obj 849 552 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 849 424 oscformat -f i /CongaLight;
+#X msg 966 476 connect 192.168.0.4 6000;
+#X obj 872 268 s 4-Hit;
+#X obj 849 367 r 4-Blink;
+#X obj 930 323 r 3-Blink;
+#X obj 1012 323 r 2-Blink;
+#X obj 1093 345 r 1-Blink;
+#X connect 0 0 14 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 17 0;
+#X connect 7 0 13 0;
+#X connect 9 0 8 0;
+#X connect 10 0 9 1;
+#X connect 12 0 18 0;
+#X connect 13 0 0 0;
+#X connect 15 0 2 0;
+#X connect 16 0 12 0;
+#X connect 17 0 9 0;
+#X connect 17 0 11 0;
+#X connect 17 1 5 0;
+#X connect 18 0 3 0;
+#X connect 19 0 21 0;
+#X connect 21 0 23 0;
+#X connect 23 0 22 0;
+#X connect 23 0 34 0;
+#X connect 23 1 20 0;
+#X connect 24 0 19 0;
+#X connect 25 0 31 0;
+#X connect 26 0 25 0;
+#X connect 27 0 28 0;
+#X connect 28 0 25 0;
+#X connect 29 0 33 0;
+#X connect 30 0 32 0;
+#X connect 32 0 27 0;
+#X connect 33 0 25 0;
+#X connect 35 0 30 0;
+#X connect 36 0 30 0;
+#X connect 37 0 30 0;
+#X connect 38 0 30 0;
+#X restore 97 67 pd CONGAS;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 4 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 7 2 10 0;
+#X connect 7 3 11 0;
