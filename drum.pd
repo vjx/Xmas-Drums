@@ -1,4 +1,4 @@
-#N canvas 98 119 2604 1336 10;
+#N canvas 0 81 1366 687 10;
 #X obj 71 51 timer;
 #X floatatom -9 86 12 0 0 0 - - -;
 #X floatatom 86 144 12 0 0 0 - - -;
@@ -27,7 +27,7 @@
 #X obj 692 8 metro 1;
 #X obj 692 93 f;
 #X obj 692 121 + 1;
-#X obj 692 -16 tgl 15 0 empty ON empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 692 -66 tgl 15 0 empty ON empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 692 155 sel;
 #X msg 707 68 0;
@@ -50,9 +50,9 @@
 #X obj 173 530 t f f;
 #X obj 834 -24 f \$1;
 #X obj 205 -28 r \$1-ListaIn;
-#X obj 146 -270 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj -78 -292 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 146 -249 f \$1;
+#X obj -78 -271 f \$1;
 #X obj 71 -24 r \$1-TimerStart;
 #X obj 41 551 r \$1-CertoState;
 #X obj 173 601 s \$1-CertoState;
@@ -65,8 +65,8 @@
 -1;
 #X obj 157 623 print \$1-ERRADO;
 #X obj 13 634 print \$1-CERTO;
-#X obj -13 -389 r \$1-Hit;
-#X obj -13 -273 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj -285 -174 r \$1-Hit;
+#X obj -196 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 98 19 r \$1-HitTest;
 #X obj 962 -111 print \$1-DROPOUT;
@@ -74,16 +74,16 @@
 #X msg 1052 -322 bang;
 #X msg 1055 -296 stop;
 #X obj 962 -375 r \$1-TestDropout;
-#X msg 146 -225 \; \$1-TestDropout stop \; \$1-ListaIn rewind \; \$1-CertoState
+#X msg -78 -247 \; \$1-TestDropout stop \; \$1-ListaIn rewind \; \$1-CertoState
 1 \; \$1-TimerStart bang \;;
 #X msg 982 -221 \; Relogio-\$1 0 \;;
 #X obj 982 -257 f \$1;
-#X msg -13 -225 \; \$1-ListaIn bang \; \$1-HitTest bang \; \$1-TestDropout
+#X msg -196 137 \; \$1-ListaIn bang \; \$1-HitTest bang \; \$1-TestDropout
 stop \; \$1-TestDropout bang \;;
-#X obj -13 -252 f \$1;
+#X obj -196 110 f \$1;
 #X obj 834 -74 r LoadLists;
 #X obj 306 -286 r \$1-SeqStart;
-#X obj 146 -373 r \$1-SeqPrepare;
+#X obj -163 -349 r \$1-SeqPrepare;
 #X text 122 335 Valor de erro maximo (ms);
 #X obj 508 -185 tabwrite relogios;
 #X obj 541 -243 f \$1;
@@ -95,8 +95,8 @@ stop \; \$1-TestDropout bang \;;
 #X obj 962 -141 spigot;
 #X obj 995 -161 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 1 1;
-#X obj 1257 50 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj -441 2 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X msg 879 186 \; \$1-TestDropout stop \; \$1-Finish bang \;;
 #X obj 879 155 \$1;
 #X obj 489 -370 r Relogio-SET-\$1;
@@ -118,14 +118,14 @@ stop \; \$1-TestDropout bang \;;
 #X obj 692 479 s \$1-ListaOut;
 #X obj 719 359 f;
 #X msg 719 401 \; \$1-Blink bang \;;
-#X obj -13 -306 spigot;
-#X obj 146 -350 t b b;
-#X msg 47 -310 1;
-#X obj 66 -407 r \$1-Finish;
-#X msg 85 -308 0;
-#X obj 62 -365 delay 667;
+#X obj -196 56 spigot;
+#X obj -163 -326 t b b;
+#X msg -163 -80 1;
+#X obj -131 -47 r \$1-Finish;
+#X msg -131 8 0;
+#X obj -131 -23 delay 667;
 #X obj 1040 -174 loadbang;
-#N canvas 0 50 1626 1054 NumeroJogadores 0;
+#N canvas 375 160 404 512 NumeroJogadores 0;
 #X obj 101 95 sel 0 1 2 3;
 #X msg 43 166 1;
 #X obj 94 162 f \$1;
@@ -153,7 +153,7 @@ stop \; \$1-TestDropout bang \;;
 #X obj 753 -283 r FullLenght;
 #X msg 306 -214 \; \$1-ListaOut rewind \; \$1-ListaOut bang \; \$1-CounterOut
 bang \; \$1-TestDropout bang \;;
-#N canvas 0 50 1214 1201 AvaliaPerformance 1;
+#N canvas 1 81 555 557 AvaliaPerformance 0;
 #X obj 99 32 r Relogio-\$1;
 #X obj 99 55 sel 1;
 #X obj 99 151 f;
@@ -168,12 +168,12 @@ bang \; \$1-TestDropout bang \;;
 #X obj 109 348 /;
 #X obj 70 437 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 109 433 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 109 433 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 107 107 t b b;
 #X obj 109 405 <;
 #X obj 109 453 s Relogio-SET-\$1;
-#N canvas 0 50 1803 952 ContaHits 0;
+#N canvas 0 81 1366 687 ContaHits 0;
 #X obj 166 398 outlet;
 #X obj 293 42 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -229,9 +229,27 @@ total.;
 #X connect 15 0 12 0;
 #X connect 15 0 13 0;
 #X connect 17 0 8 0;
-#X restore 321 488 pd AvaliaPerformance;
+#X restore 1129 -363 pd AvaliaPerformance;
 #X text 102 89 Offset do tempo para poder testar o primeiro hit se
 for antes do inicio da frase;
+#X text 761 -257 Nomalmente 8;
+#X text 760 -240 Com 3 jogadores é 6;
+#X floatatom 757 365 5 0 0 0 - - -;
+#X text 891 128 Carrega a sequencia para Piscar;
+#X text 809 361 Pisca a conga de acordo com o numero de jogadores;
+#X text -119 -325 Prepara a Sequencia;
+#X text -132 -79 Abre o input de Hits;
+#X msg -427 -305 1;
+#X obj -366 -374 f \$1;
+#X obj -366 -351 sel 1 2 3 4;
+#X obj -372 -512 r PlayersNumber;
+#X text 1010 197 Acaba a Sequencia;
+#X obj -372 -463 sel 1;
+#X obj -348 -427 bang;
+#X msg -358 -298 0;
+#X obj -285 -111 spigot;
+#X obj -253 -141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
 #X connect 0 0 1 0;
 #X connect 0 0 3 0;
 #X connect 2 0 3 1;
@@ -288,7 +306,7 @@ for antes do inicio da frase;
 #X connect 50 0 112 0;
 #X connect 51 0 27 0;
 #X connect 51 0 52 0;
-#X connect 55 0 103 0;
+#X connect 55 0 130 0;
 #X connect 56 0 67 0;
 #X connect 57 0 0 1;
 #X connect 59 0 77 0;
@@ -333,12 +351,26 @@ for antes do inicio da frase;
 #X connect 99 1 101 0;
 #X connect 101 0 102 0;
 #X connect 103 0 56 0;
-#X connect 104 0 43 0;
-#X connect 104 1 105 0;
+#X connect 104 0 105 0;
+#X connect 104 1 43 0;
 #X connect 105 0 103 1;
 #X connect 106 0 108 0;
 #X connect 107 0 103 1;
 #X connect 108 0 107 0;
 #X connect 109 0 80 0;
 #X connect 110 0 101 1;
+#X connect 110 0 117 0;
 #X connect 111 0 89 1;
+#X connect 122 0 131 0;
+#X connect 123 0 124 0;
+#X connect 124 0 129 0;
+#X connect 124 1 122 0;
+#X connect 124 2 122 0;
+#X connect 124 3 129 0;
+#X connect 125 0 127 0;
+#X connect 127 0 123 0;
+#X connect 127 1 128 0;
+#X connect 128 0 122 0;
+#X connect 129 0 131 0;
+#X connect 130 0 103 0;
+#X connect 131 0 130 1;
