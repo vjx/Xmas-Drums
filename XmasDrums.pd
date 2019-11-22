@@ -1,50 +1,50 @@
 #N canvas 299 81 979 523 10;
-#X obj 229 242 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
+#X obj 229 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 174 -91 5 0 0 0 - MaxErro-set -;
-#X obj 174 -69 s MaxErro;
-#X obj 229 142 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+#X floatatom 174 89 5 0 0 0 - MaxErro-set -;
+#X obj 174 111 s MaxErro;
+#X obj 229 322 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 229 194 s 1-Hit;
-#X obj 309 -20 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 229 374 s 1-Hit;
+#X obj 309 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 229 222 r 1-Blink;
-#X obj 229 174 cyclone/speedlim 100;
-#X text 36 -159 X-MAS TREE DRUMS;
-#X text 35 -144 JACK-THE-MAKER;
-#X text 36 -131 NOV 2019;
-#X obj 379 142 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 229 402 r 1-Blink;
+#X obj 229 354 cyclone/speedlim 100;
+#X text 36 21 X-MAS TREE DRUMS;
+#X text 35 36 JACK-THE-MAKER;
+#X text 36 49 NOV 2019;
+#X obj 379 322 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 379 174 cyclone/speedlim 100;
-#X obj 379 194 s 2-Hit;
-#X obj 379 222 r 2-Blink;
-#X obj 409 -20 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 379 354 cyclone/speedlim 100;
+#X obj 379 374 s 2-Hit;
+#X obj 379 402 r 2-Blink;
+#X obj 409 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 774 -106 nbx 2 33 -1e+37 1e+37 0 0 empty BEAT empty 0 -8 0 30
--262144 -33289 -258113 2 256;
-#X obj 9 276 array define relogios 4;
-#X obj 523 -21 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 774 74 nbx 2 33 -1e+37 1e+37 0 0 empty BEAT empty 0 -8 0 30
+-262144 -33289 -258113 0 256;
+#X obj 9 456 array define relogios 4;
+#X obj 523 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 623 -21 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 623 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 519 142 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 519 322 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 519 174 cyclone/speedlim 100;
-#X obj 669 142 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 519 354 cyclone/speedlim 100;
+#X obj 669 322 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 669 174 cyclone/speedlim 100;
-#X obj 519 194 s 3-Hit;
-#X obj 519 222 r 3-Blink;
-#X obj 669 194 s 4-Hit;
-#X obj 669 222 r 4-Blink;
-#X obj 229 102 key;
-#X obj 229 122 sel 113;
-#X obj 379 102 key;
-#X obj 379 120 sel 119;
-#X obj 519 102 key;
-#X obj 519 123 sel 101;
-#X obj 669 102 key;
-#X obj 669 122 sel 114;
+#X obj 669 354 cyclone/speedlim 100;
+#X obj 519 374 s 3-Hit;
+#X obj 519 402 r 3-Blink;
+#X obj 669 374 s 4-Hit;
+#X obj 669 402 r 4-Blink;
+#X obj 229 282 key;
+#X obj 229 302 sel 113;
+#X obj 379 282 key;
+#X obj 379 300 sel 119;
+#X obj 519 282 key;
+#X obj 519 303 sel 101;
+#X obj 669 282 key;
+#X obj 669 302 sel 114;
 #N canvas 0 81 1366 687 SOM 0;
 #X obj 36 165 catch~ sum;
 #X obj 534 164 soundfiler;
@@ -294,28 +294,28 @@
 #X connect 75 0 77 0;
 #X connect 76 0 71 1;
 #X connect 77 0 76 0;
-#X restore 12 97 pd SOM;
-#X obj 309 -46 r Relogio-SET-1;
-#X obj 409 -46 r Relogio-SET-2;
-#X obj 523 -47 r Relogio-SET-3;
-#X obj 623 -47 r Relogio-SET-4;
-#X obj 379 242 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
+#X restore 12 277 pd SOM;
+#X obj 309 134 r Relogio-SET-1;
+#X obj 409 134 r Relogio-SET-2;
+#X obj 523 133 r Relogio-SET-3;
+#X obj 623 133 r Relogio-SET-4;
+#X obj 379 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 519 242 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
+#X obj 519 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 669 242 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
+#X obj 669 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 773 -66 tgl 60 0 empty SomCongas-SET empty 17 7 0 10 -262144
+#X obj 773 114 tgl 60 0 empty SomCongas-SET empty 17 7 0 10 -262144
 -1 -1 0 1;
-#X obj 773 1 s SomCongas;
-#X text 852 -95 BEAT;
-#X obj 921 557 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 773 181 s SomCongas;
+#X text 852 85 BEAT;
+#X obj 921 737 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 12 160 drum 1 0;
-#X obj 11 191 drum 2 2;
-#X obj 11 222 drum 3 4;
-#X obj 11 251 drum 4 6;
-#X obj 11 129 comunication;
+#X obj 12 340 drum 1 0;
+#X obj 11 371 drum 2 2;
+#X obj 11 402 drum 3 4;
+#X obj 11 431 drum 4 6;
+#X obj 11 309 comunication;
 #N canvas 39 167 1107 600 JOGO 0;
 #X obj 15 32 loadbang;
 #X obj 201 18 hradio 30 1 0 5 empty empty empty 0 -8 0 10 -262144 -1
@@ -513,18 +513,18 @@ stop \; SomCongas-SET 0 \;;
 #X connect 60 0 61 0;
 #X connect 60 1 63 0;
 #X connect 61 0 62 0;
-#X restore 63 96 pd JOGO;
-#X obj 63 -86 vradio 30 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
+#X restore 63 276 pd JOGO;
+#X obj 63 94 vradio 30 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
 -1 1;
-#X obj 90 66 s PlayersNumber;
-#X obj 63 39 t b f;
-#X text 96 -77 1 PLAYER;
-#X text 95 -47 2 PLAYER;
-#X text 96 -17 3 PLAYER;
-#X text 98 12 4 PLAYER;
-#X obj 469 -125 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj 469 -145 r Estrela;
+#X obj 90 246 s PlayersNumber;
+#X obj 63 219 t b f;
+#X text 96 103 1 PLAYER;
+#X text 95 133 2 PLAYER;
+#X text 96 163 3 PLAYER;
+#X text 98 192 4 PLAYER;
+#X obj 469 55 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 469 35 r Estrela;
 #X connect 1 0 2 0;
 #X connect 3 0 7 0;
 #X connect 6 0 0 0;
