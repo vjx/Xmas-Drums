@@ -21,7 +21,7 @@
 #X obj 409 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 774 74 nbx 2 33 -1e+37 1e+37 0 0 empty BEAT empty 0 -8 0 30
--262144 -33289 -258113 2 256;
+-262144 -33289 -258113 0 256;
 #X obj 9 456 array define relogios 4;
 #X obj 523 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
@@ -449,21 +449,24 @@ stop \; SomCongas-SET 0 \;;
 #X obj 560 198 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 560 170 r Estrela;
-#X obj 560 263 sel 1;
-#X obj 560 286 cyclone/onebang;
-#X obj 647 259 r reset-clocks;
-#X obj 560 311 delay 50;
-#X obj 560 349 t b b;
-#X obj 527 389 delay 700;
-#X msg 481 444 \; Relogio-SET-1 1 \; Relogio-SET-2 1 \; Relogio-SET-3
+#X obj 560 373 sel 1;
+#X obj 560 396 cyclone/onebang;
+#X obj 647 369 r reset-clocks;
+#X obj 560 421 delay 50;
+#X obj 560 459 t b b;
+#X obj 527 499 delay 700;
+#X msg 481 554 \; Relogio-SET-1 1 \; Relogio-SET-2 1 \; Relogio-SET-3
 1 \; Relogio-SET-4 1 \;;
-#X msg 622 405 \; ON 0 \; GameStart stop \; Win bang \; Finish bang
+#X msg 622 515 \; ON 0 \; GameStart stop \; Win bang \; Finish bang
 \; 1-TestDropout stop \; 2-TestDropout stop \; 3-TestDropout stop \;
 4-TestDropout stop \; Relogio-SET-1 1 \; Relogio-SET-2 1 \; Relogio-SET-3
 1 \; Relogio-SET-4 1 \;;
-#X obj 729 65 r EasyMode;
-#X obj 729 88 == 0;
+#X obj 712 65 r EasyMode;
+#X obj 712 88 == 0;
 #X obj 679 116 spigot;
+#X obj 593 284 r EasyMode;
+#X obj 593 307 == 0;
+#X obj 560 335 spigot;
 #X connect 0 0 11 0;
 #X connect 1 0 6 0;
 #X connect 2 0 3 0;
@@ -516,7 +519,7 @@ stop \; SomCongas-SET 0 \;;
 #X connect 51 0 48 0;
 #X connect 52 0 48 0;
 #X connect 53 0 48 0;
-#X connect 54 0 56 0;
+#X connect 54 0 69 0;
 #X connect 55 0 54 0;
 #X connect 56 0 57 0;
 #X connect 57 0 59 0;
@@ -528,9 +531,12 @@ stop \; SomCongas-SET 0 \;;
 #X connect 64 0 65 0;
 #X connect 65 0 66 1;
 #X connect 66 0 15 0;
+#X connect 67 0 68 0;
+#X connect 68 0 69 1;
+#X connect 69 0 56 0;
 #X restore 63 276 pd JOGO;
 #X obj 63 94 vradio 30 1 0 4 empty ElfControl empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 2;
 #X obj 90 246 s PlayersNumber;
 #X obj 63 219 t b f;
 #X text 96 103 1 PLAYER;
