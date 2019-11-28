@@ -1,4 +1,4 @@
-#N canvas 299 81 979 523 10;
+#N canvas 283 19 1169 673 10;
 #X obj 229 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X floatatom 174 89 5 0 0 0 - MaxErro-set -;
@@ -6,7 +6,7 @@
 #X obj 229 322 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 229 374 s 1-Hit;
-#X obj 309 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 309 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 229 402 r 1-Blink;
 #X obj 229 354 cyclone/speedlim 100;
@@ -18,14 +18,14 @@
 #X obj 379 354 cyclone/speedlim 100;
 #X obj 379 374 s 2-Hit;
 #X obj 379 402 r 2-Blink;
-#X obj 409 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 409 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 774 74 nbx 2 33 -1e+37 1e+37 0 0 empty BEAT empty 0 -8 0 30
+#X obj 774 74 nbx 2 33 -1e+037 1e+037 0 0 empty BEAT empty 0 -8 0 30
 -262144 -33289 -258113 0 256;
 #X obj 9 456 array define relogios 4;
-#X obj 523 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 523 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 623 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 623 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 519 322 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -55,7 +55,7 @@
 #X obj 1111 97 r 3-Blink;
 #X obj 1181 98 r 4-Blink;
 #X obj 1041 357 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 1026 390 *~;
 #X floatatom 1079 270 5 0 0 0 - - -;
 #X obj 1142 186 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
@@ -66,10 +66,10 @@
 #X obj 506 44 loadbang;
 #X obj 551 825 tabread4~ chimes-L;
 #X msg 651 559 0;
-#X obj 552 665 *~ 2.88e+06;
+#X obj 552 665 *~ 2.88e+006;
 #X obj 552 642 phasor~ 0.0166667;
 #X obj 569 709 tabread4~ chimes-R;
-#X obj 1025 422 throw~ conga;
+#X obj 1026 542 throw~ conga;
 #X obj 118 170 catch~ conga;
 #X floatatom 196 328 0 0 120 0 - - -;
 #X text 237 328 level \, dB;
@@ -209,13 +209,18 @@
 #X text 707 498 Os Chimes so sicronizam cada 16;
 #X text 707 519 Para Soar melhor no loop;
 #X text 767 712 Fade out quando acaba;
+#X obj 1042 467 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 1027 500 *~;
+#X obj 1042 413 r EasyMode;
+#X obj 1042 436 == 0;
 #X connect 0 0 41 0;
 #X connect 4 0 14 0;
 #X connect 5 0 14 0;
 #X connect 6 0 14 0;
 #X connect 7 0 14 0;
 #X connect 8 0 9 1;
-#X connect 9 0 21 0;
+#X connect 9 0 83 0;
 #X connect 10 0 64 1;
 #X connect 11 0 10 0;
 #X connect 13 0 1 0;
@@ -294,6 +299,10 @@
 #X connect 75 0 77 0;
 #X connect 76 0 71 1;
 #X connect 77 0 76 0;
+#X connect 82 0 83 1;
+#X connect 83 0 21 0;
+#X connect 84 0 85 0;
+#X connect 85 0 82 0;
 #X restore 12 277 pd SOM;
 #X obj 309 134 r Relogio-SET-1;
 #X obj 409 134 r Relogio-SET-2;
@@ -301,12 +310,12 @@
 #X obj 623 133 r Relogio-SET-4;
 #X obj 379 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 519 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
+#X obj 519 424 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 669 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 773 114 tgl 60 0 empty SomCongas-SET empty 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 773 181 s SomCongas;
 #X text 852 85 BEAT;
 #X obj 921 737 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -319,7 +328,7 @@
 #N canvas 39 167 1107 600 JOGO 0;
 #X obj 15 32 loadbang;
 #X obj 201 18 hradio 30 1 0 5 empty empty empty 0 -8 0 10 -262144 -1
--1 1;
+-1 3;
 #X obj 201 -95 f;
 #X obj 201 -72 + 1;
 #X obj 201 -49 mod 3;
@@ -337,7 +346,7 @@
 stop \; SomCongas-SET 0 \;;
 #X obj 827 -78 r PlayersNumber;
 #X msg 846 0 \; Relogio-SET-4 1 \;;
-#X obj 679 123 r GameStart;
+#X obj 679 33 r GameStart;
 #X obj 679 156 delay 48000;
 #X msg 679 182 0;
 #X obj 679 207 s ON;
@@ -437,7 +446,7 @@ stop \; SomCongas-SET 0 \;;
 #X msg 526 24 8;
 #X msg 491 26 6;
 #X msg 452 25 4;
-#X obj 560 198 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 560 198 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 560 170 r Estrela;
 #X obj 560 263 sel 1;
@@ -452,6 +461,9 @@ stop \; SomCongas-SET 0 \;;
 \; 1-TestDropout stop \; 2-TestDropout stop \; 3-TestDropout stop \;
 4-TestDropout stop \; Relogio-SET-1 1 \; Relogio-SET-2 1 \; Relogio-SET-3
 1 \; Relogio-SET-4 1 \;;
+#X obj 729 65 r EasyMode;
+#X obj 729 88 == 0;
+#X obj 679 116 spigot;
 #X connect 0 0 11 0;
 #X connect 1 0 6 0;
 #X connect 2 0 3 0;
@@ -464,7 +476,7 @@ stop \; SomCongas-SET 0 \;;
 #X connect 8 0 9 0;
 #X connect 8 0 10 0;
 #X connect 12 0 19 0;
-#X connect 14 0 15 0;
+#X connect 14 0 66 0;
 #X connect 15 0 16 0;
 #X connect 16 0 17 0;
 #X connect 18 0 20 0;
@@ -513,18 +525,53 @@ stop \; SomCongas-SET 0 \;;
 #X connect 60 0 61 0;
 #X connect 60 1 63 0;
 #X connect 61 0 62 0;
+#X connect 64 0 65 0;
+#X connect 65 0 66 1;
+#X connect 66 0 15 0;
 #X restore 63 276 pd JOGO;
-#X obj 63 94 vradio 30 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
--1 1;
+#X obj 63 94 vradio 30 1 0 4 empty ElfControl empty 0 -8 0 10 -262144
+-1 -1 3;
 #X obj 90 246 s PlayersNumber;
 #X obj 63 219 t b f;
 #X text 96 103 1 PLAYER;
 #X text 95 133 2 PLAYER;
 #X text 96 163 3 PLAYER;
 #X text 98 192 4 PLAYER;
-#X obj 469 55 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 469 55 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 469 35 r Estrela;
+#X obj 300 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 300 399 r 1-Hit;
+#X obj 449 420 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 449 398 r 2-Hit;
+#X obj 592 429 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 592 398 r 3-Hit;
+#X obj 748 424 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 748 393 r 4-Hit;
+#X obj 300 537 spigot;
+#X obj 300 572 s 1-Blink;
+#X obj 333 490 r EasyMode;
+#X obj 333 515 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 449 530 spigot;
+#X obj 482 483 r EasyMode;
+#X obj 482 508 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 592 531 spigot;
+#X obj 625 484 r EasyMode;
+#X obj 625 509 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 748 524 spigot;
+#X obj 781 477 r EasyMode;
+#X obj 781 502 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 449 565 s 2-Blink;
+#X obj 592 568 s 3-Blink;
+#X obj 748 559 s 4-Blink;
 #X connect 1 0 2 0;
 #X connect 3 0 7 0;
 #X connect 6 0 0 0;
@@ -555,3 +602,23 @@ stop \; SomCongas-SET 0 \;;
 #X connect 56 0 53 0;
 #X connect 56 1 55 0;
 #X connect 62 0 61 0;
+#X connect 63 0 71 0;
+#X connect 64 0 63 0;
+#X connect 65 0 75 0;
+#X connect 66 0 65 0;
+#X connect 67 0 78 0;
+#X connect 68 0 67 0;
+#X connect 69 0 81 0;
+#X connect 70 0 69 0;
+#X connect 71 0 72 0;
+#X connect 73 0 74 0;
+#X connect 74 0 71 1;
+#X connect 75 0 84 0;
+#X connect 76 0 77 0;
+#X connect 77 0 75 1;
+#X connect 78 0 85 0;
+#X connect 79 0 80 0;
+#X connect 80 0 78 1;
+#X connect 81 0 86 0;
+#X connect 82 0 83 0;
+#X connect 83 0 81 1;

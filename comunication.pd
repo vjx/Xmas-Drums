@@ -1,5 +1,5 @@
-#N canvas 68 147 428 501 10;
-#N canvas 35 119 1273 624 RELOGIOS 0;
+#N canvas 1290 27 598 552 10;
+#N canvas 245 223 1273 624 RELOGIOS 1;
 #X obj 27 463 netsend -u -b;
 #X msg 146 438 disconnect;
 #X obj 27 385 list prepend send;
@@ -7,7 +7,7 @@
 #X obj 145 386 loadbang;
 #X obj 27 485 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 27 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 27 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 326 457 netsend -u -b;
 #X msg 445 432 disconnect;
@@ -16,7 +16,7 @@
 #X obj 444 380 loadbang;
 #X obj 326 479 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 326 319 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 326 319 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 326 291 r Relogio-SET-2;
 #X obj 635 446 netsend -u -b;
@@ -26,7 +26,7 @@
 #X obj 753 369 loadbang;
 #X obj 635 468 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 635 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 635 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 925 465 netsend -u -b;
 #X msg 1044 440 disconnect;
@@ -35,7 +35,7 @@
 #X obj 1043 388 loadbang;
 #X obj 925 487 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 925 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 925 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 921 223 netsend -u -b;
 #X msg 1040 198 disconnect;
@@ -44,7 +44,7 @@
 #X obj 1039 146 loadbang;
 #X obj 921 245 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 921 85 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 921 85 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 27 297 r Relogio-SET-1;
 #X obj 27 357 oscformat -f i /Clock;
@@ -61,8 +61,21 @@
 #X msg 1042 411 connect 192.168.0.14 6000;
 #X msg 1038 169 connect 192.168.0.15 6000;
 #X text 95 90 Controle dos relogios e Estrela;
-#X obj 498 170 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 196 298 r connect;
+#X obj 196 321 sel 0 1;
+#X obj 500 296 r connect;
+#X obj 500 319 sel 0 1;
+#X obj 817 311 r connect;
+#X obj 817 334 sel 0 1;
+#X obj 1067 298 r connect;
+#X obj 1067 321 sel 0 1;
+#X obj 39 128 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 39 176 s connect;
+#X obj 538 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 538 107 metro 900;
+#X floatatom 593 56 5 0 0 0 - - -;
 #X connect 0 0 5 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
@@ -108,40 +121,47 @@
 #X connect 47 0 15 0;
 #X connect 48 0 22 0;
 #X connect 49 0 29 0;
-#X connect 51 0 1 0;
-#X connect 51 0 23 0;
-#X connect 51 0 16 0;
-#X connect 51 0 8 0;
+#X connect 51 0 52 0;
+#X connect 52 0 1 0;
+#X connect 52 1 38 0;
+#X connect 53 0 54 0;
+#X connect 54 0 8 0;
+#X connect 54 1 40 0;
+#X connect 55 0 56 0;
+#X connect 56 0 16 0;
+#X connect 56 1 47 0;
+#X connect 57 0 58 0;
+#X connect 58 0 23 0;
+#X connect 58 1 48 0;
+#X connect 59 0 60 0;
+#X connect 61 0 62 0;
+#X connect 62 0 28 0;
+#X connect 62 0 21 0;
+#X connect 62 0 35 0;
+#X connect 62 0 13 0;
+#X connect 62 0 6 0;
+#X connect 63 0 62 1;
 #X restore 25 15 pd RELOGIOS;
 #X obj 151 177 oscparse;
 #X obj 151 205 list trim;
-#X obj 183 285 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
 #X obj 155 136 netreceive -u -b 6005;
 #X obj 26 335 print 6005;
-#X obj 151 233 route Start;
-#X obj 151 326 sel 2 3 4 5;
-#X obj 144 367 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 151 300 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 168 368 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 204 301 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 197 368 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 257 301 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 221 369 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 310 300 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 278 81 978 643 CONGAS 1;
+#N canvas 163 203 1613 768 CONGAS 0;
 #X obj 115 596 netsend -u -b;
 #X msg 234 571 disconnect;
 #X obj 164 138 oscparse;
 #X obj 115 518 list prepend send;
 #X obj 115 547 list trim;
-#X obj 233 232 print RECV;
 #X obj 164 166 list trim;
 #X obj 233 519 loadbang;
-#X obj 164 337 s congahit;
-#X obj 164 287 spigot;
-#X obj 196 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
 #X obj 73 288 bng 60 50 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 115 462 1;
@@ -152,69 +172,265 @@
 #X obj 115 433 r 1-Blink;
 #X obj 164 194 route Conga;
 #X obj 115 490 oscformat -f i /CongaLight;
-#X obj 612 130 oscparse;
-#X obj 681 224 print RECV;
-#X obj 612 158 list trim;
-#X obj 521 280 bng 60 50 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 792 117 oscparse;
+#X obj 792 145 list trim;
+#X obj 701 267 bng 60 50 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 612 186 route Conga;
-#X obj 616 89 netreceive -u -b 6004;
-#X obj 589 591 netsend -u -b;
-#X msg 708 566 disconnect;
-#X obj 589 513 list prepend send;
-#X obj 589 542 list trim;
-#X obj 707 514 loadbang;
-#X msg 589 457 1;
-#X obj 589 613 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 792 173 route Conga;
+#X obj 769 578 netsend -u -b;
+#X msg 888 553 disconnect;
+#X obj 769 500 list prepend send;
+#X obj 769 529 list trim;
+#X obj 887 501 loadbang;
+#X msg 769 444 1;
+#X obj 769 600 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 589 485 oscformat -f i /CongaLight;
-#X msg 706 537 connect 192.168.0.4 6000;
-#X obj 612 329 s 4-Hit;
-#X obj 589 428 r 4-Blink;
-#X obj 670 384 r 3-Blink;
-#X obj 752 384 r 2-Blink;
-#X obj 833 406 r 1-Blink;
-#X connect 0 0 14 0;
+#X obj 769 472 oscformat -f i /CongaLight;
+#X obj 1252 117 oscparse;
+#X obj 1252 145 list trim;
+#X obj 1161 267 bng 60 50 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1252 173 route Conga;
+#X obj 1256 76 netreceive -u -b 6004;
+#X obj 1229 578 netsend -u -b;
+#X msg 1348 553 disconnect;
+#X obj 1229 500 list prepend send;
+#X obj 1229 529 list trim;
+#X obj 1347 501 loadbang;
+#X msg 1229 444 1;
+#X obj 1229 600 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj 1229 472 oscformat -f i /CongaLight;
+#X msg 1346 524 connect 192.168.0.4 6000;
+#X obj 1252 316 s 4-Hit;
+#X obj 1229 415 r 4-Blink;
+#X obj 497 687 netsend -u -b;
+#X msg 603 646 disconnect;
+#X obj 504 87 oscparse;
+#X obj 502 515 list prepend send;
+#X obj 502 544 list trim;
+#X obj 504 115 list trim;
+#X obj 602 594 loadbang;
+#X obj 413 237 bng 60 50 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 502 459 1;
+#X obj 497 709 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 504 143 route Conga;
+#X obj 502 487 oscformat -f i /CongaLight;
+#X msg 886 524 connect 192.168.0.3 6000;
+#X obj 796 76 netreceive -u -b 6003;
+#X msg 601 617 connect 192.168.0.2 6000;
+#X obj 508 46 netreceive -u -b 6002;
+#X obj 304 459 r connect;
+#X obj 304 482 sel 0 1;
+#X obj 676 540 r connect;
+#X obj 676 563 sel 0 1;
+#X obj 792 316 s 3-Hit;
+#X obj 512 266 s 2-Hit;
+#X obj 233 232 print 6001;
+#X obj 573 181 print 6002;
+#X obj 861 211 print 6003;
+#X obj 1321 211 print 6004;
+#X obj 769 415 r 3-Blink;
+#X obj 502 430 r 2-Blink;
+#X obj 957 444 r connect;
+#X obj 955 470 sel 0 1;
+#X obj 1427 444 r connect;
+#X obj 1425 470 sel 0 1;
+#X obj 27 46 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 27 94 s connect;
+#X obj 164 330 s 1-Hit;
+#X floatatom 490 296 5 0 0 0 - - -;
+#X obj 413 407 oscformat -f i /Threshold;
+#X obj 490 318 t f f;
+#X msg 529 375 80;
+#X msg 517 343 set \$1;
+#X obj 583 343 r SetTreshold;
+#X floatatom 261 302 5 0 0 0 - - -;
+#X obj 184 413 oscformat -f i /Threshold;
+#X obj 261 324 t f f;
+#X msg 300 381 50;
+#X msg 288 349 set \$1;
+#X obj 354 349 r SetTreshold;
+#X floatatom 916 266 5 0 0 0 - - -;
+#X obj 839 377 oscformat -f i /Threshold;
+#X obj 916 288 t f f;
+#X msg 955 345 20;
+#X msg 943 313 set \$1;
+#X obj 1009 313 r SetTreshold;
+#X floatatom 1378 256 5 0 0 0 - - -;
+#X obj 1301 367 oscformat -f i /Threshold;
+#X obj 1378 278 t f f;
+#X msg 1417 335 20;
+#X msg 1405 303 set \$1;
+#X obj 1471 303 r SetTreshold;
+#X connect 0 0 10 0;
 #X connect 1 0 0 0;
-#X connect 2 0 6 0;
+#X connect 2 0 5 0;
 #X connect 3 0 4 0;
 #X connect 4 0 0 0;
-#X connect 6 0 17 0;
-#X connect 7 0 13 0;
-#X connect 9 0 8 0;
-#X connect 10 0 9 1;
-#X connect 12 0 18 0;
-#X connect 13 0 0 0;
-#X connect 15 0 2 0;
-#X connect 16 0 12 0;
-#X connect 17 0 9 0;
-#X connect 17 0 11 0;
-#X connect 17 1 5 0;
-#X connect 18 0 3 0;
-#X connect 19 0 21 0;
-#X connect 21 0 23 0;
-#X connect 23 0 22 0;
-#X connect 23 0 34 0;
-#X connect 23 1 20 0;
-#X connect 24 0 19 0;
-#X connect 25 0 31 0;
-#X connect 26 0 25 0;
+#X connect 5 0 13 0;
+#X connect 6 0 9 0;
+#X connect 8 0 14 0;
+#X connect 9 0 0 0;
+#X connect 11 0 2 0;
+#X connect 12 0 8 0;
+#X connect 13 0 7 0;
+#X connect 13 0 77 0;
+#X connect 13 1 65 0;
+#X connect 14 0 3 0;
+#X connect 15 0 16 0;
+#X connect 16 0 18 0;
+#X connect 18 0 17 0;
+#X connect 18 0 63 0;
+#X connect 18 1 67 0;
+#X connect 19 0 25 0;
+#X connect 20 0 19 0;
+#X connect 21 0 22 0;
+#X connect 22 0 19 0;
+#X connect 23 0 55 0;
+#X connect 24 0 26 0;
+#X connect 26 0 21 0;
 #X connect 27 0 28 0;
-#X connect 28 0 25 0;
-#X connect 29 0 33 0;
-#X connect 30 0 32 0;
-#X connect 32 0 27 0;
-#X connect 33 0 25 0;
-#X connect 35 0 30 0;
-#X connect 36 0 30 0;
-#X connect 37 0 30 0;
-#X connect 38 0 30 0;
+#X connect 28 0 30 0;
+#X connect 30 0 29 0;
+#X connect 30 0 41 0;
+#X connect 30 1 68 0;
+#X connect 31 0 27 0;
+#X connect 32 0 38 0;
+#X connect 33 0 32 0;
+#X connect 34 0 35 0;
+#X connect 35 0 32 0;
+#X connect 36 0 40 0;
+#X connect 37 0 39 0;
+#X connect 39 0 34 0;
+#X connect 40 0 32 0;
+#X connect 42 0 37 0;
+#X connect 43 0 52 0;
+#X connect 44 0 43 0;
+#X connect 45 0 48 0;
+#X connect 46 0 47 0;
+#X connect 47 0 43 0;
+#X connect 48 0 53 0;
+#X connect 49 0 57 0;
+#X connect 51 0 54 0;
+#X connect 53 0 50 0;
+#X connect 53 0 64 0;
+#X connect 53 1 66 0;
+#X connect 54 0 46 0;
+#X connect 55 0 19 0;
+#X connect 56 0 15 0;
+#X connect 57 0 43 0;
+#X connect 58 0 45 0;
+#X connect 59 0 60 0;
+#X connect 60 0 1 0;
+#X connect 60 1 9 0;
+#X connect 61 0 62 0;
+#X connect 62 0 44 0;
+#X connect 62 1 57 0;
+#X connect 69 0 24 0;
+#X connect 70 0 51 0;
+#X connect 71 0 72 0;
+#X connect 72 0 20 0;
+#X connect 72 1 55 0;
+#X connect 73 0 74 0;
+#X connect 74 0 33 0;
+#X connect 74 1 40 0;
+#X connect 75 0 76 0;
+#X connect 78 0 80 0;
+#X connect 79 0 46 0;
+#X connect 80 0 79 0;
+#X connect 80 1 82 0;
+#X connect 81 0 79 0;
+#X connect 82 0 81 0;
+#X connect 83 0 81 0;
+#X connect 84 0 86 0;
+#X connect 85 0 3 0;
+#X connect 86 0 85 0;
+#X connect 86 1 88 0;
+#X connect 87 0 85 0;
+#X connect 88 0 87 0;
+#X connect 89 0 87 0;
+#X connect 90 0 92 0;
+#X connect 91 0 21 0;
+#X connect 92 0 91 0;
+#X connect 92 1 94 0;
+#X connect 93 0 91 0;
+#X connect 94 0 93 0;
+#X connect 95 0 93 0;
+#X connect 96 0 98 0;
+#X connect 97 0 34 0;
+#X connect 98 0 97 0;
+#X connect 98 1 100 0;
+#X connect 99 0 97 0;
+#X connect 100 0 99 0;
+#X connect 101 0 99 0;
 #X restore 23 54 pd CONGAS;
+#X obj 151 233 route Start2 Start3 Start4 StartEasy;
+#X obj 141 465 s ElfControl;
+#X msg 141 421 1;
+#X msg 194 421 2;
+#X msg 245 420 3;
+#X obj 355 486 s EasyMode;
+#X obj 355 447 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 355 390 1;
+#X msg 325 400 0;
+#X msg 415 167 StartEasy 1;
+#X msg 367 49 Start2 1;
+#X msg 379 83 Start3 1;
+#X msg 403 122 Start4 1;
+#X obj 414 380 s SetTreshold;
+#X obj 310 320 t b b b;
+#X obj 257 321 t b b b;
+#X obj 204 321 t b b b;
+#X obj 151 320 t b b b;
+#X obj 355 413 t f b;
+#X obj 427 442 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 427 462 sel 0;
+#X msg 427 525 0;
+#X obj 427 548 s ON;
+#X obj 427 485 delay 1100;
 #X connect 1 0 2 0;
-#X connect 2 0 6 0;
-#X connect 4 0 1 0;
-#X connect 6 0 5 0;
-#X connect 7 0 8 0;
-#X connect 7 1 9 0;
-#X connect 7 2 10 0;
-#X connect 7 3 11 0;
+#X connect 2 0 4 0;
+#X connect 2 0 10 0;
+#X connect 3 0 1 0;
+#X connect 5 0 27 0;
+#X connect 6 0 26 0;
+#X connect 7 0 25 0;
+#X connect 8 0 24 0;
+#X connect 10 0 5 0;
+#X connect 10 1 6 0;
+#X connect 10 2 7 0;
+#X connect 10 3 8 0;
+#X connect 12 0 11 0;
+#X connect 13 0 11 0;
+#X connect 14 0 11 0;
+#X connect 16 0 15 0;
+#X connect 17 0 28 0;
+#X connect 18 0 16 0;
+#X connect 19 0 10 0;
+#X connect 20 0 10 0;
+#X connect 21 0 10 0;
+#X connect 22 0 10 0;
+#X connect 24 0 14 0;
+#X connect 24 1 17 0;
+#X connect 24 2 23 0;
+#X connect 25 0 14 0;
+#X connect 25 1 18 0;
+#X connect 25 2 23 0;
+#X connect 26 0 13 0;
+#X connect 26 1 18 0;
+#X connect 26 2 23 0;
+#X connect 27 0 12 0;
+#X connect 27 1 18 0;
+#X connect 27 2 23 0;
+#X connect 28 0 16 0;
+#X connect 28 1 29 0;
+#X connect 29 0 30 0;
+#X connect 30 0 33 0;
+#X connect 31 0 32 0;
+#X connect 33 0 31 0;
