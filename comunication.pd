@@ -1,5 +1,5 @@
-#N canvas 1290 27 598 552 10;
-#N canvas 245 223 1273 624 RELOGIOS 1;
+#N canvas 43 232 598 552 10;
+#N canvas 245 223 1273 624 RELOGIOS 0;
 #X obj 27 463 netsend -u -b;
 #X msg 146 438 disconnect;
 #X obj 27 385 list prepend send;
@@ -7,7 +7,7 @@
 #X obj 145 386 loadbang;
 #X obj 27 485 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 27 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 27 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 326 457 netsend -u -b;
 #X msg 445 432 disconnect;
@@ -16,7 +16,7 @@
 #X obj 444 380 loadbang;
 #X obj 326 479 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 326 319 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 326 319 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 326 291 r Relogio-SET-2;
 #X obj 635 446 netsend -u -b;
@@ -26,7 +26,7 @@
 #X obj 753 369 loadbang;
 #X obj 635 468 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 635 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 635 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 925 465 netsend -u -b;
 #X msg 1044 440 disconnect;
@@ -374,7 +374,7 @@
 #X msg 194 421 2;
 #X msg 245 420 3;
 #X obj 355 486 s EasyMode;
-#X obj 355 447 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 355 447 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 355 390 1;
 #X msg 325 400 0;
@@ -388,7 +388,7 @@
 #X obj 204 321 t b b b;
 #X obj 151 320 t b b b;
 #X obj 355 413 t f b;
-#X obj 427 442 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 427 442 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 427 462 sel 0;
 #X msg 427 525 0;

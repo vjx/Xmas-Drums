@@ -1,4 +1,4 @@
-#N canvas 283 19 1169 673 10;
+#N canvas 347 81 978 649 10;
 #X obj 229 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X floatatom 174 89 5 0 0 0 - MaxErro-set -;
@@ -6,7 +6,7 @@
 #X obj 229 322 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 229 374 s 1-Hit;
-#X obj 309 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 309 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 229 402 r 1-Blink;
 #X obj 229 354 cyclone/speedlim 100;
@@ -18,14 +18,14 @@
 #X obj 379 354 cyclone/speedlim 100;
 #X obj 379 374 s 2-Hit;
 #X obj 379 402 r 2-Blink;
-#X obj 409 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 409 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 774 74 nbx 2 33 -1e+037 1e+037 0 0 empty BEAT empty 0 -8 0 30
--262144 -33289 -258113 0 256;
+#X obj 774 74 nbx 2 33 -1e+37 1e+37 0 0 empty BEAT empty 0 -8 0 30
+-262144 -33289 -258113 2 256;
 #X obj 9 456 array define relogios 4;
-#X obj 523 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 523 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 623 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 623 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 519 322 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -55,7 +55,7 @@
 #X obj 1111 97 r 3-Blink;
 #X obj 1181 98 r 4-Blink;
 #X obj 1041 357 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 1026 390 *~;
 #X floatatom 1079 270 5 0 0 0 - - -;
 #X obj 1142 186 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
@@ -66,7 +66,7 @@
 #X obj 506 44 loadbang;
 #X obj 551 825 tabread4~ chimes-L;
 #X msg 651 559 0;
-#X obj 552 665 *~ 2.88e+006;
+#X obj 552 665 *~ 2.88e+06;
 #X obj 552 642 phasor~ 0.0166667;
 #X obj 569 709 tabread4~ chimes-R;
 #X obj 1026 542 throw~ conga;
@@ -210,7 +210,7 @@
 #X text 707 519 Para Soar melhor no loop;
 #X text 767 712 Fade out quando acaba;
 #X obj 1042 467 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 1027 500 *~;
 #X obj 1042 413 r EasyMode;
 #X obj 1042 436 == 0;
@@ -315,7 +315,7 @@
 #X obj 669 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 773 114 tgl 60 0 empty SomCongas-SET empty 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 773 181 s SomCongas;
 #X text 852 85 BEAT;
 #X obj 921 737 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -446,7 +446,7 @@ stop \; SomCongas-SET 0 \;;
 #X msg 526 24 8;
 #X msg 491 26 6;
 #X msg 452 25 4;
-#X obj 560 198 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 560 198 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 560 170 r Estrela;
 #X obj 560 263 sel 1;
@@ -530,14 +530,14 @@ stop \; SomCongas-SET 0 \;;
 #X connect 66 0 15 0;
 #X restore 63 276 pd JOGO;
 #X obj 63 94 vradio 30 1 0 4 empty ElfControl empty 0 -8 0 10 -262144
--1 -1 3;
+-1 -1 1;
 #X obj 90 246 s PlayersNumber;
 #X obj 63 219 t b f;
 #X text 96 103 1 PLAYER;
 #X text 95 133 2 PLAYER;
 #X text 96 163 3 PLAYER;
 #X text 98 192 4 PLAYER;
-#X obj 469 55 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 469 55 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 469 35 r Estrela;
 #X obj 300 422 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
@@ -555,19 +555,19 @@ stop \; SomCongas-SET 0 \;;
 #X obj 300 537 spigot;
 #X obj 300 572 s 1-Blink;
 #X obj 333 490 r EasyMode;
-#X obj 333 515 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 333 515 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 449 530 spigot;
 #X obj 482 483 r EasyMode;
-#X obj 482 508 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 482 508 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 592 531 spigot;
 #X obj 625 484 r EasyMode;
-#X obj 625 509 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 625 509 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 748 524 spigot;
 #X obj 781 477 r EasyMode;
-#X obj 781 502 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 781 502 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 449 565 s 2-Blink;
 #X obj 592 568 s 3-Blink;
