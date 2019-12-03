@@ -398,7 +398,7 @@
 -1 -1;
 #X obj 497 531 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 450 486 delay 4000;
+#X obj 450 486 delay 1005;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 2 0 10 0;
