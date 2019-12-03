@@ -3,21 +3,21 @@
 -1 -1;
 #X floatatom 174 89 5 0 0 0 - MaxErro-set -;
 #X obj 174 111 s MaxErro;
-#X obj 309 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 309 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 277 276 r 1-Blink;
 #X text 36 21 X-MAS TREE DRUMS;
 #X text 35 36 JACK-THE-MAKER;
 #X text 36 49 NOV 2019;
 #X obj 426 276 r 2-Blink;
-#X obj 409 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 409 160 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 774 74 nbx 2 33 -1e+37 1e+37 0 0 empty BEAT empty 0 -8 0 30
 -262144 -33289 -258113 0 256;
 #X obj 9 456 array define relogios 4;
-#X obj 523 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 523 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 623 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 623 159 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 569 276 r 3-Blink;
 #X obj 724 276 r 4-Blink;
@@ -31,7 +31,7 @@
 #X obj 1111 97 r 3-Blink;
 #X obj 1181 98 r 4-Blink;
 #X obj 1041 357 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 1026 390 *~;
 #X floatatom 1079 270 5 0 0 0 - - -;
 #X obj 1142 186 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
@@ -181,7 +181,7 @@
 #X text 707 519 Para Soar melhor no loop;
 #X text 767 712 Fade out quando acaba;
 #X obj 1042 467 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 1027 500 *~;
 #X obj 1042 413 r EasyMode;
 #X obj 1042 436 == 0;
@@ -190,9 +190,9 @@
 #X obj 506 67 t b b b b;
 #X msg 579 96 read -resize estrela.wav Estrela-L Estrela-R;
 #X obj 969 712 tabplay~ Estrela-L;
-#X obj 943 811 throw~ chimes-Ri;
-#X obj 968 745 throw~ chimes-Le;
-#X obj 942 775 tabplay~ Estrela-R;
+#X obj 943 861 throw~ chimes-Ri;
+#X obj 968 765 throw~ chimes-Le;
+#X obj 940 792 tabplay~ Estrela-R;
 #X obj 942 647 r SomWin;
 #X obj 942 679 t a a;
 #X msg 1005 654 \; SomWin bang \;;
@@ -205,6 +205,8 @@
 -1 -1;
 #X msg 687 430 -1;
 #X obj 701 388 t b b;
+#X obj 942 818 *~ 0.9;
+#X obj 968 745 *~ 0.9;
 #X connect 0 0 41 0;
 #X connect 4 0 14 0;
 #X connect 5 0 14 0;
@@ -293,8 +295,8 @@
 #X connect 84 2 13 0;
 #X connect 84 3 85 0;
 #X connect 85 0 1 0;
-#X connect 86 0 88 0;
-#X connect 89 0 87 0;
+#X connect 86 0 102 0;
+#X connect 89 0 101 0;
 #X connect 90 0 91 0;
 #X connect 91 0 89 0;
 #X connect 91 1 86 0;
@@ -307,6 +309,8 @@
 #X connect 99 0 69 1;
 #X connect 100 0 69 0;
 #X connect 100 1 99 0;
+#X connect 101 0 87 0;
+#X connect 102 0 88 0;
 #X restore 12 277 pd SOM;
 #X obj 309 134 r Relogio-SET-1;
 #X obj 409 134 r Relogio-SET-2;
@@ -319,7 +323,7 @@
 #X obj 724 296 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 773 114 tgl 60 0 empty SomCongas-SET empty 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 773 181 s SomCongas;
 #X text 852 85 BEAT;
 #X obj 921 737 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -332,7 +336,7 @@
 #N canvas 39 167 1107 600 JOGO 0;
 #X obj 15 32 loadbang;
 #X obj 201 18 hradio 30 1 0 5 empty empty empty 0 -8 0 10 -262144 -1
--1 3;
+-1 1;
 #X obj 201 -95 f;
 #X obj 201 -72 + 1;
 #X obj 201 -49 mod 3;
@@ -447,7 +451,7 @@ stop \; SomCongas-SET 0 \;;
 #X msg 526 24 8;
 #X msg 491 26 6;
 #X msg 452 25 4;
-#X obj 560 168 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 560 168 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 560 140 r Estrela;
 #X obj 560 373 sel 1;
@@ -545,14 +549,14 @@ Relogio-SET-3 1 \; Relogio-SET-4 1 \;;
 #X connect 69 0 2 0;
 #X restore 63 276 pd JOGO;
 #X obj 63 94 vradio 30 1 0 4 empty ElfControl empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 3;
 #X obj 90 246 s PlayersNumber;
 #X obj 63 219 t b f;
 #X text 96 103 1 PLAYER;
 #X text 95 133 2 PLAYER;
 #X text 96 163 3 PLAYER;
 #X text 98 192 4 PLAYER;
-#X obj 469 55 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 469 55 tgl 60 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 469 35 r Estrela;
 #X obj 277 360 bng 30 100 25 0 empty empty empty 17 7 0 10 -262144
@@ -570,24 +574,24 @@ Relogio-SET-3 1 \; Relogio-SET-4 1 \;;
 #X obj 277 458 spigot;
 #X obj 277 486 s 1-Blink;
 #X obj 310 411 r EasyMode;
-#X obj 310 431 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 310 431 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 426 458 spigot;
 #X obj 459 411 r EasyMode;
-#X obj 459 431 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 459 431 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 569 458 spigot;
 #X obj 602 411 r EasyMode;
-#X obj 602 431 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 602 431 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 725 458 spigot;
 #X obj 758 411 r EasyMode;
-#X obj 758 431 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 758 431 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 426 486 s 2-Blink;
 #X obj 569 486 s 3-Blink;
 #X obj 725 486 s 4-Blink;
-#N canvas 121 150 980 590 DrumZero 0;
+#N canvas 385 143 980 590 DrumZero 0;
 #X obj 374 276 textfile;
 #X msg 417 155 read seq-\$1.txt;
 #X obj 440 230 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -598,7 +602,7 @@ Relogio-SET-3 1 \; Relogio-SET-4 1 \;;
 #X obj 233 320 sel;
 #X msg 248 233 0;
 #X obj 374 411 spigot;
-#X obj 407 391 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 407 391 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 284 232 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -607,7 +611,7 @@ Relogio-SET-3 1 \; Relogio-SET-4 1 \;;
 #X text 496 302 Acaba a Sequencia;
 #X obj 456 348 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 809 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 809 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 764 92 spigot 1;
 #X obj 809 23 r EasyMode;
@@ -627,9 +631,10 @@ Relogio-SET-3 1 \; Relogio-SET-4 1 \;;
 #X obj 516 457 f;
 #X msg 516 524 \; LoadLists \$1 \; reset-clocks bang \; ON 1 \;;
 #X floatatom 401 -23 5 0 0 0 - - -;
-#X obj 157 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 168 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 516 398 delay 1500;
+#X obj 168 89 loadbang;
 #X connect 0 0 6 1;
 #X connect 0 0 8 0;
 #X connect 0 1 14 0;
@@ -663,6 +668,7 @@ Relogio-SET-3 1 \; Relogio-SET-4 1 \;;
 #X connect 31 0 27 0;
 #X connect 32 0 3 0;
 #X connect 33 0 29 0;
+#X connect 34 0 32 0;
 #X restore 87 340 pd DrumZero;
 #N canvas 1 81 450 300 TECLADO 0;
 #X obj 9 92 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144 -1
