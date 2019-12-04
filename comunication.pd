@@ -7,7 +7,7 @@
 #X obj 145 386 loadbang;
 #X obj 27 485 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 27 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 27 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 326 457 netsend -u -b;
 #X msg 445 432 disconnect;
@@ -16,7 +16,7 @@
 #X obj 444 380 loadbang;
 #X obj 326 479 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 326 319 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 326 319 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 635 446 netsend -u -b;
 #X msg 754 421 disconnect;
@@ -25,7 +25,7 @@
 #X obj 753 369 loadbang;
 #X obj 635 468 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 635 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 635 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 925 465 netsend -u -b;
 #X msg 1044 440 disconnect;
@@ -34,7 +34,7 @@
 #X obj 1043 388 loadbang;
 #X obj 925 487 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 925 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 925 327 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 921 223 netsend -u -b;
 #X msg 1040 198 disconnect;
@@ -43,7 +43,7 @@
 #X obj 1039 146 loadbang;
 #X obj 921 245 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 921 85 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 921 85 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 27 297 r Relogio-SET-1;
 #X obj 27 357 oscformat -f i /Clock;
@@ -154,7 +154,7 @@
 -1 -1;
 #X obj 364 302 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 163 203 1613 768 CONGAS 0;
+#N canvas 0 81 1366 687 CONGAS 1;
 #X obj 115 596 netsend -u -b;
 #X msg 234 571 disconnect;
 #X obj 164 138 oscparse;
@@ -257,7 +257,7 @@
 #X floatatom 916 266 5 0 0 0 - - -;
 #X obj 839 377 oscformat -f i /Threshold;
 #X obj 916 288 t f f;
-#X msg 955 345 20;
+#X msg 955 345 19;
 #X msg 943 313 set \$1;
 #X obj 1009 313 r SetTreshold;
 #X floatatom 1378 256 5 0 0 0 - - -;
@@ -374,7 +374,7 @@
 #X msg 194 421 2;
 #X msg 245 420 3;
 #X obj 378 487 s EasyMode;
-#X obj 378 448 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 378 448 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 409 392 1;
 #X msg 348 401 0;
